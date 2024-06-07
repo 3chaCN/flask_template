@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lorem Ipsum</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+        <header class="plain-header">
+            <div class="ban">
+                <img id="logo" src="{{ url_for('static', filename='Xen_hypervisor_logo_black.svg') }}" height="60px"><h1 id="title">Lorem Ipsum</h1>        
+            </div>
+            <nav id="topmenu" class="plain-list-h">
+                {% for item in menubar %}
+                    <a class="menuitm" href="{{ item.href }}">{{ item.caption }}</a>
+                {% endfor %}
+            </nav>
+        </header>
+             {% block body %}{% endblock %}
+        <footer class="foot">
+                <p>{{ footer.author }}</p>
+        </footer>
+  </body>
+</html>

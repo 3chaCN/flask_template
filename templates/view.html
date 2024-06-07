@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% block body %}
+<nav id="sidemenu" class="plain-list-v">
+    <ul class="list-menu">
+        {% for item in nav %}
+            <li  class="cat"><a class="menuitm" href="{{ item.href }}">{{ item.caption }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
+
+<main class="body">
+    <section id="{{ section.id }}">
+        <h1>{{ section.title }}</h1>
+        <div id="{{ content.id }}">
+            {{ content.text }}
+        </div>
+    </section>
+</main>
+{% endblock %}
